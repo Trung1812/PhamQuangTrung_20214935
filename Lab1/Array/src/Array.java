@@ -1,4 +1,9 @@
 
 public class Array {
-	public int[] = 
+	public int[] matrix;
+	
+	public void sort() {
+		
+	}
+	
 }
