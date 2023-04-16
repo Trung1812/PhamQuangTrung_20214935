@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author dinosaur
- *
- */
-module JavaBasics {
-}
