@@ -1,5 +1,5 @@
 
-public class Aims {
+public class CartTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,20 +14,12 @@ public class Aims {
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		anOrder.addDigitalVideoDisc(dvd3);
 		
-		System.out.println("Total Cost is: ");
-		System.out.println(anOrder.totalCost());
-		
-		System.out.println("The quantity of disc now is:");
-		System.out.println(anOrder.getQtyOrdered());
-		
-		anOrder.removeDigitalVideoDisc(dvd2);
-		
-		System.out.println("The quantity of disc now is:");
-		System.out.println(anOrder.getQtyOrdered());
-		
+		anOrder.print();
 		anOrder.print();
 		anOrder.searchByTitle("The Lion King");
 		anOrder.searchById(1);
+		anOrder.searchById(5);
+		anOrder.searchByTitle("La la land");
 	}
 
 }
