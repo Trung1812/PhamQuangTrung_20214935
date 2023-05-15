@@ -1,0 +1,8 @@
+ Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+ Answer: I prefer to use the constructor that use array parameter because it allow addition of an arbitrary number of DigitalVideoDisc without buidling different constructors for different number of disc need adding
+ 
+After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain? 
+Answer: Because Java is a pass-by-value programming language, therefore, when the method swap(a,b) is called, copies of the references a, b are created and the changes made to a, b in the method are, in fact, the changes made to their copies. 
+
+After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed? 
+Answer: Because the setter method allow us to directly change the object jungleDVD
