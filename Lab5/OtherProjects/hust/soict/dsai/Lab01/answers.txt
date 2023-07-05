@@ -1,0 +1,331 @@
+2.2.5
+//
+import javax.swing.JOptionPane;
+public class Lab01_225 {
+    public static void main(String[] args) {
+        String strNum1, strNum2;
+        String notification;
+        strNum1 = JOptionPane.showInputDialog(null, 
+        "Enter the first number: ", 
+        "First number",
+        JOptionPane.INFORMATION_MESSAGE);
+
+        strNum2 = JOptionPane.showInputDialog(null, 
+        "Enter the second number: ", 
+        "Second number",
+        JOptionPane.INFORMATION_MESSAGE);
+
+        double num1 = Double.parseDouble(strNum1);
+        double num2 = Double.parseDouble(strNum2);
+        notification = "Sum: " + (num1 + num2) + "\nDifference: " + (num1 - num2) + "\nProduct: " + (num1*num2) + "\nQuotient: " + num1/num2;
+        JOptionPane.showMessageDialog(null, notification, "Result", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
+//
+
+2.2.6
+//
+import javax.swing.JOptionPane;
+public class Lab01_226 {
+    public static void main(String[] args) {
+        String a_str, b_str;
+        a_str = JOptionPane.showInputDialog(null, 
+        "Enter the first coefficient: ", 
+        "First coeffiecient", 
+        JOptionPane.INFORMATION_MESSAGE);
+
+        b_str = JOptionPane.showInputDialog(null,
+        "Enter the second coefficient: ", 
+        "Second coeffiecient", 
+        JOptionPane.INFORMATION_MESSAGE);
+
+        double a = Double.parseDouble(a_str);
+        double b = Double.parseDouble(b_str);
+
+        if (a == 0 && b == 0) {
+            JOptionPane.showMessageDialog(null, "x = all real number", "Result", JOptionPane.INFORMATION_MESSAGE);
+        } else if (a == 0 && b != 0) {
+            JOptionPane.showMessageDialog(null, "No solution", "Result", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "x = " + -b/a, "Result", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+}
+//
+
+6.1
+//
+import javax.swing.JOptionPane;
+
+public class Lab01_61 {
+    public static void main(String[] args){
+        int option = JOptionPane.showConfirmDialog(null, "Do you wanna play?", null, 0);
+
+        JOptionPane.showMessageDialog(null, "You have chosen: " + (option==JOptionPane.YES_OPTION?"Yes":"No"));
+        System.exit(0);
+    }
+
+}
+//
+
+6.2
+//
+import java.util.Scanner;
+
+public class Lab01_62 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("What is your name?: ");
+        String name = sc.next();
+        
+        System.out.println("How old are you?: ");
+        int age = sc.nextInt();
+        
+        System.out.println("How tall are you?: ");
+        double height = sc.nextDouble();
+
+        System.out.println("Mrs/Mr." + name + ", " + age + " years old. " + "Your height is " + height + ".");
+    }
+}
+//
+
+6.3
+//
+import java.util.Scanner;
+
+public class Lab01_63 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), k = 0;
+        
+        for (int i = 1; i<=n; i++, k=0) {
+            for (int space = 1; space <= n-i; space++) {
+                System.out.print("  ");
+            }
+
+            while (k != 2*i -1) {
+                System.out.print("* ");
+                k++;
+            }
+
+            System.out.println();
+        }
+    }
+}
+//
+
+6.4
+//
+import java.util.Scanner;
+
+public class Lab01_64 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String month = "";
+        int year=0;
+        int days = 0;
+
+        // Get input for month and year
+        boolean validInput = false;
+        while (!validInput) {
+            System.out.print("Enter month (full name, abbreviation, or in number): ");
+            month = scanner.nextLine().trim();
+            System.out.print("Enter year: ");
+            String yearInput = scanner.nextLine().trim();
+
+            // Validate year input
+            try {
+                year = Integer.parseInt(yearInput);
+                validInput = year > 0;
+            } catch (NumberFormatException e) {
+                validInput = false;
+            }
+
+            if (!validInput) {
+                System.out.println("Invalid year. Please try again.");
+                continue;
+            }
+
+            // Switch statement for month input
+            switch (month.toLowerCase()) {
+                case "january":
+                case "jan":
+                case "jan.":
+                case "1":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "february":
+                case "feb":
+                case "feb.":
+                case "2":
+                    // Check for leap year
+                    boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+                    days = isLeapYear ? 29 : 28;
+                    validInput = true;
+                    break;
+                case "march":
+                case "mar":
+                case "mar.":
+                case "3":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "april":
+                case "apr":
+                case "apr.":
+                case "4":
+                    days = 30;
+                    validInput = true;
+                    break;
+                case "may":
+                case "5":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "june":
+                case "jun":
+                case "jun.":
+                case "6":
+                    days = 30;
+                    validInput = true;
+                    break;
+                case "july":
+                case "jul":
+                case "jul.":
+                case "7":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "august":
+                case "aug":
+                case "aug.":
+                case "8":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "september":
+                case "sep":
+                case "sep.":
+                case "9":
+                    days = 30;
+                    validInput = true;
+                    break;
+                case "october":
+                case "oct":
+                case "oct.":
+                case "10":
+                    days = 31;
+                    validInput = true;
+                    break;
+                case "november":
+                case "nov":
+                case "nov.":
+                case "11":
+                    days = 30;
+                    validInput = true;
+                    break;
+                case "december":
+                case "dec":
+                case "dec.":
+                case "12":
+                    days = 31;
+                    validInput = true;
+                    break;
+                default:
+                    System.out.println("Invalid month. Please try again.");
+            }
+        }
+
+        scanner.close();
+
+        month = month.substring(0, 1).toUpperCase() + month.substring(1);
+        System.out.println(month + " " + year + " has " + days + " days.");
+    }
+}
+//
+
+6.5
+//
+import java.util.Scanner;
+
+public class Lab01_65 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the array length: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        // take element as inputs
+        System.out.print("Enter the array element: ");
+        for (int i = 0; i<arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }       
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        int sum = 0;
+        double avg = 0;
+        for (int i: arr) {
+            System.out.print(i + " ");
+            sum += i;
+        }
+        avg = sum/n;
+        System.out.println("\nArray sum: " + sum + "\n" + "Array average: " + avg);
+    }
+    
+}
+//
+
+6.6
+//
+import java.util.Scanner;
+
+public class Lab01_66 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the dimension: ");
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] a = new int[m][n];
+        int[][] b = new int[m][n];
+        int[][] c = new int[m][n];
+
+        System.out.println("Enter the first matrix: ");
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter the second matrix: ");
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<n; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<n; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        System.out.println("The sum: ");
+        for (int i = 0; i<m; i++) {
+            for (int j = 0; j<n; j++) {
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    
+}
+//
