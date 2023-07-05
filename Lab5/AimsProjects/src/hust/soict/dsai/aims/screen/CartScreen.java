@@ -57,7 +57,7 @@ public class CartScreen extends JFrame {
         cart.addMedia(dvd3);
         List<String> authors = new ArrayList<String>();
         authors.add("LTK");
-        Book book1 = new Book("Kien", "Adventure", 19.99f, authors);
+        Book book1 = new Book("Dino", "Adventure", 19.99f, authors);
         cart.addMedia(book1);
         new CartScreen(cart);
     }
